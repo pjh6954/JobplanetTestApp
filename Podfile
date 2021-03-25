@@ -7,6 +7,8 @@ target 'JobplanetTestApp' do
 
   # Pods for JobplanetTestApp
   pod 'Kingfisher', '~> 6.0'
+  pod 'Alamofire', '~> 5.2'
+
 
   target 'JobplanetTestAppTests' do
     inherit! :search_paths
