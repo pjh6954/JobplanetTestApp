@@ -8,6 +8,8 @@ target 'JobplanetTestApp' do
   # Pods for JobplanetTestApp
   pod 'Kingfisher', '~> 6.0'
   pod 'Alamofire', '~> 5.2'
+  pod 'ObjectMapper'
+  pod 'SwiftyJSON'
 
 
   target 'JobplanetTestAppTests' do
