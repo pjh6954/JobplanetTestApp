@@ -21,6 +21,14 @@
 		722C5FE0260DB50B00B60F75 /* HorizontalCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 722C5FDE260DB50B00B60F75 /* HorizontalCollectionViewCell.xib */; };
 		722C5FE8260DB7CC00B60F75 /* CompanyTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 722C5FE7260DB7CC00B60F75 /* CompanyTitleView.xib */; };
 		722C5FED260DB7E600B60F75 /* CompanyTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722C5FEC260DB7E600B60F75 /* CompanyTitleView.swift */; };
+		722C5FF2260DD75200B60F75 /* CompanyInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722C5FF1260DD75200B60F75 /* CompanyInfoView.swift */; };
+		722C5FF7260DD76100B60F75 /* CompanyReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722C5FF6260DD76100B60F75 /* CompanyReviewView.swift */; };
+		722C5FFC260DD77A00B60F75 /* CompanyReviewView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 722C5FFB260DD77A00B60F75 /* CompanyReviewView.xib */; };
+		722C6001260DD78500B60F75 /* CompanyInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 722C6000260DD78500B60F75 /* CompanyInfoView.xib */; };
+		722C6009260DD7D800B60F75 /* RootViewController+TableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722C6008260DD7D800B60F75 /* RootViewController+TableViewDelegate.swift */; };
+		722C600E260DD7EA00B60F75 /* RootViewController+CollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722C600D260DD7EA00B60F75 /* RootViewController+CollectionViewDelegate.swift */; };
+		722C6013260DD83700B60F75 /* RootViewController+ScrollViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722C6012260DD83700B60F75 /* RootViewController+ScrollViewDelegate.swift */; };
+		722C6018260DD85400B60F75 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722C6017260DD85400B60F75 /* RootViewModel.swift */; };
 		7276B906260C67EC0011FEB9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7276B905260C67EC0011FEB9 /* AppDelegate.swift */; };
 		7276B908260C67EC0011FEB9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7276B907260C67EC0011FEB9 /* SceneDelegate.swift */; };
 		7276B90F260C67ED0011FEB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7276B90E260C67ED0011FEB9 /* Assets.xcassets */; };
@@ -68,6 +76,14 @@
 		722C5FDE260DB50B00B60F75 /* HorizontalCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HorizontalCollectionViewCell.xib; sourceTree = "<group>"; };
 		722C5FE7260DB7CC00B60F75 /* CompanyTitleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompanyTitleView.xib; sourceTree = "<group>"; };
 		722C5FEC260DB7E600B60F75 /* CompanyTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyTitleView.swift; sourceTree = "<group>"; };
+		722C5FF1260DD75200B60F75 /* CompanyInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyInfoView.swift; sourceTree = "<group>"; };
+		722C5FF6260DD76100B60F75 /* CompanyReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyReviewView.swift; sourceTree = "<group>"; };
+		722C5FFB260DD77A00B60F75 /* CompanyReviewView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompanyReviewView.xib; sourceTree = "<group>"; };
+		722C6000260DD78500B60F75 /* CompanyInfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompanyInfoView.xib; sourceTree = "<group>"; };
+		722C6008260DD7D800B60F75 /* RootViewController+TableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RootViewController+TableViewDelegate.swift"; sourceTree = "<group>"; };
+		722C600D260DD7EA00B60F75 /* RootViewController+CollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RootViewController+CollectionViewDelegate.swift"; sourceTree = "<group>"; };
+		722C6012260DD83700B60F75 /* RootViewController+ScrollViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RootViewController+ScrollViewDelegate.swift"; sourceTree = "<group>"; };
+		722C6017260DD85400B60F75 /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
 		7276B902260C67EC0011FEB9 /* JobplanetTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JobplanetTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7276B905260C67EC0011FEB9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7276B907260C67EC0011FEB9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -225,6 +241,10 @@
 				7276B94D260C6A310011FEB9 /* Cells */,
 				722C5FE7260DB7CC00B60F75 /* CompanyTitleView.xib */,
 				722C5FEC260DB7E600B60F75 /* CompanyTitleView.swift */,
+				722C6000260DD78500B60F75 /* CompanyInfoView.xib */,
+				722C5FF1260DD75200B60F75 /* CompanyInfoView.swift */,
+				722C5FFB260DD77A00B60F75 /* CompanyReviewView.xib */,
+				722C5FF6260DD76100B60F75 /* CompanyReviewView.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -247,6 +267,10 @@
 			children = (
 				722C5F89260D840F00B60F75 /* RootViewControllers.storyboard */,
 				722C5F8E260D841900B60F75 /* RootViewController.swift */,
+				722C6017260DD85400B60F75 /* RootViewModel.swift */,
+				722C6012260DD83700B60F75 /* RootViewController+ScrollViewDelegate.swift */,
+				722C6008260DD7D800B60F75 /* RootViewController+TableViewDelegate.swift */,
+				722C600D260DD7EA00B60F75 /* RootViewController+CollectionViewDelegate.swift */,
 				722C5F93260D842400B60F75 /* SearchViewController.swift */,
 			);
 			path = RootView;
@@ -385,6 +409,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				722C6001260DD78500B60F75 /* CompanyInfoView.xib in Resources */,
+				722C5FFC260DD77A00B60F75 /* CompanyReviewView.xib in Resources */,
 				722C5FCC260DACE200B60F75 /* HorizontalTableViewCell.xib in Resources */,
 				722C5FE8260DB7CC00B60F75 /* CompanyTitleView.xib in Resources */,
 				7276B912260C67ED0011FEB9 /* LaunchScreen.storyboard in Resources */,
@@ -521,9 +547,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				722C5FD5260DACF400B60F75 /* ResultTableViewCell.swift in Sources */,
+				722C6009260DD7D800B60F75 /* RootViewController+TableViewDelegate.swift in Sources */,
 				722C5F8F260D841900B60F75 /* RootViewController.swift in Sources */,
+				722C5FF7260DD76100B60F75 /* CompanyReviewView.swift in Sources */,
+				722C6018260DD85400B60F75 /* RootViewModel.swift in Sources */,
 				7276B906260C67EC0011FEB9 /* AppDelegate.swift in Sources */,
 				7276B958260C6A650011FEB9 /* Enums.swift in Sources */,
+				722C600E260DD7EA00B60F75 /* RootViewController+CollectionViewDelegate.swift in Sources */,
+				722C5FF2260DD75200B60F75 /* CompanyInfoView.swift in Sources */,
 				7276B95D260C6A6F0011FEB9 /* Protocols.swift in Sources */,
 				7276B908260C67EC0011FEB9 /* SceneDelegate.swift in Sources */,
 				722C5FCB260DACE200B60F75 /* HorizontalTableViewCell.swift in Sources */,
@@ -531,6 +562,7 @@
 				722C5F94260D842400B60F75 /* SearchViewController.swift in Sources */,
 				7276B950260C6A5B0011FEB9 /* Constants.swift in Sources */,
 				722C5F75260D77A300B60F75 /* APIRequest.swift in Sources */,
+				722C6013260DD83700B60F75 /* RootViewController+ScrollViewDelegate.swift in Sources */,
 				722C5FDF260DB50B00B60F75 /* HorizontalCollectionViewCell.swift in Sources */,
 				7276B964260C6ABD0011FEB9 /* SearchDataModel.swift in Sources */,
 			);

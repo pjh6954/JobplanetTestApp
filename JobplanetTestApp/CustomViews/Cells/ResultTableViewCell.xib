@@ -24,11 +24,31 @@
                             <constraint firstAttribute="height" constant="50" id="SeV-Dq-zG8"/>
                         </constraints>
                     </view>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="wr1-C5-g4V">
+                        <rect key="frame" x="0.0" y="50" width="320" height="104"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mej-jg-Bex">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="1"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="avJ-wS-4nv"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yLc-8V-FAc">
+                                <rect key="frame" x="0.0" y="1" width="320" height="103"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                    </stackView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="y1w-UT-1XD" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="4iV-Em-8NK"/>
+                    <constraint firstAttribute="bottom" secondItem="wr1-C5-g4V" secondAttribute="bottom" id="4kv-He-1qF"/>
                     <constraint firstAttribute="trailing" secondItem="y1w-UT-1XD" secondAttribute="trailing" id="86E-Jb-F0X"/>
+                    <constraint firstItem="wr1-C5-g4V" firstAttribute="top" secondItem="y1w-UT-1XD" secondAttribute="bottom" id="Pkj-hS-3n9"/>
                     <constraint firstItem="y1w-UT-1XD" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Usd-FU-6fh"/>
+                    <constraint firstItem="wr1-C5-g4V" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="lE3-wW-gff"/>
+                    <constraint firstItem="wr1-C5-g4V" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="nHZ-jV-bPL"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
