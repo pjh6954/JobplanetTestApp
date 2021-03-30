@@ -65,7 +65,6 @@ public struct searchItem : Mappable {
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ" // not zulu time : default = locale
             let result = dateFormatter.date(from: newValue)
-            NSLog("CHeck respons : \(newValue):: \(result)")
             self.date = result
         }
     }

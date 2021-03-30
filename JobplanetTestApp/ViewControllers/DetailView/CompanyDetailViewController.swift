@@ -12,6 +12,8 @@ class CompanyDetailViewController: UIViewController {
     public var selectedData : searchItem? = nil
     private var data : searchItem = .init()
     
+    @IBOutlet weak var stvContents: UIStackView!
+    
     @IBOutlet weak var imvThumb: UIImageView!
     
     @IBOutlet weak var lbName: UILabel!
@@ -49,7 +51,7 @@ class CompanyDetailViewController: UIViewController {
     }
     
     public func dataInit() {
-        guard let _data = self.selectedData else {
+        guard let _data = self.selectedData, let type = _data.cell_type, type == .company || type == .review else {
             self.navigationController?.popViewController(animated: true)
             return
         }
@@ -60,12 +62,24 @@ class CompanyDetailViewController: UIViewController {
         self.imvThumb.kf.setImage(with: URL(string: _data.logo_path))
         self.lbName.text = _data.name
         
+        if type == .review {
+            let companyView = CompanyReviewView(frame: .zero)
+            companyView.translatesAutoresizingMaskIntoConstraints = false
+            companyView.setReviewData(data: _data)
+            self.stvContents.addArrangedSubview(companyView)
+        }else{
+            let companyView = CompanyInfoView(frame: .zero)
+            companyView.translatesAutoresizingMaskIntoConstraints = false
+            companyView.setInfoData(data: _data)
+            self.stvContents.addArrangedSubview(companyView)
+        }
         
         self.viewInit()
         
     }
     
     //코드로 구현할까 해서 만들었던 부분. 불필요하게 길어진다고 판단하여 주석처리.
+    //TODO: 나중에 다시 직접 코드로만 구현해볼 부분
     private func viewInit() {
         /*
         let scrollView = UIScrollView(frame: .zero)

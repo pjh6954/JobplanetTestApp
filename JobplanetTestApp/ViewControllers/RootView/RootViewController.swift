@@ -19,12 +19,8 @@ class RootViewController : UIViewController
         return searchController
     }()
     
-    public var defaultDataResponse : searchResponseModel = .init()
+    public var viewModel : RootViewModel = .init()
     
-    public var searchFilterCompany : [searchItem] = []
-    //public var horizontalResult : [searchItem] = [] // only horizontal
-    //public var nonHorizontalResult : [searchItem] = [] // company and reviews
-    public var cellHeights : [CGFloat] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         self.commonInit()
@@ -60,17 +56,6 @@ class RootViewController : UIViewController
         }else{
             self.navigationItem.titleView = self.searchBarController.searchBar
         }
-        //let searchController = UISearchController(searchResultsController: nil)
-        //searchController.searchResultsUpdater = self
-        //searchController.obscuresBackgroundDuringPresentation = false
-        //searchController.searchBar.placeholder = "Search Company"
-        //definesPresentationContext = true // 다른 뷰 컨트롤러로 이동하면 search bar가 화면에 남지 않도록 한다.
-        //if #available(iOS 11.0, *) {
-        //    self.navigationItem.searchController = searchController
-        //}else{
-        //    self.navigationItem.titleView = searchController.searchBar
-        //}
-        //self.searchBarController = searchController
         
         //table view setting
         self.tvLists.delegate = self
@@ -86,41 +71,32 @@ class RootViewController : UIViewController
         
     }
     
-    //horizontal, 기본 list들을 모두 갖고와서 보여주기위한 데이터를 load하는 부분.
+    
     public func dataInit() {
-        //self.nonHorizontalResult = []
-        //self.horizontalResult = []
-        APIRequest.shared.requestSearchLists { (result) in
-            if let _result = result {
-                self.defaultDataResponse = _result
-                /*
-                self.nonHorizontalResult = _result.items.compactMap({ (element) -> searchItem? in
-                    guard let _type = element.cell_type, _type == .company || _type == .review else {
-                        return nil
-                    }
-                    return element
-                })
-                self.horizontalResult = _result.items.compactMap({ (element) -> searchItem? in
-                    guard let _type = element.cell_type, _type == .horizontal else {
-                        return nil
-                    }
-                    return element
-                })
-                */
-            }else{
-                self.defaultDataResponse = .init()
+        //view model binding을 여기서 한다.
+        
+        self.viewModel.getDataComplete = {[weak self] in
+            guard let strongSelf = self else {
+                return
             }
-            
-            self.reloadDefaultLists()
-        } errorHandler: { (error) in
-            // error
+            strongSelf.tvLists.reloadData()
         }
         
-    }
-    
-    //default list를 reload하는 function. 이전에 dataInit을 호출해야만 한다.
-    private func reloadDefaultLists() {
-        self.tvLists.reloadData()
+        self.viewModel.getDataError = {[weak self] _ in
+            guard let _ = self else {
+                return
+            }
+            //error 온 경우 처리하기 위한 부분.
+        }
+        
+        self.viewModel.filterComplete = {[weak self] in
+            guard let strongSelf = self else {
+                return
+            }
+            strongSelf.tvLists.reloadData()
+        }
+        
+        self.viewModel.getDatas(str: nil, type: nil)
     }
 }
 

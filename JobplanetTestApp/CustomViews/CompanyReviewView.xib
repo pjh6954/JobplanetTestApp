@@ -16,6 +16,7 @@
                 <outlet property="lbPros" destination="zsL-mE-a4q" id="Dhv-RL-658"/>
                 <outlet property="lbProsDescription" destination="dZH-3q-x4r" id="RRm-Pv-7Mz"/>
                 <outlet property="lbReviewSummary" destination="i1d-Rg-YKY" id="m0u-gB-38D"/>
+                <outlet property="uivSeeMore" destination="Z3b-X3-7Ev" id="P3E-5o-lw3"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

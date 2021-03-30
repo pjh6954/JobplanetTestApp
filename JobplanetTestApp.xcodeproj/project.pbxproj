@@ -26,7 +26,6 @@
 		722C6018260DD85400B60F75 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722C6017260DD85400B60F75 /* RootViewModel.swift */; };
 		724702CE2612B50100CEA278 /* UITableVIew+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724702CD2612B50100CEA278 /* UITableVIew+Extension.swift */; };
 		724702D32612B52400CEA278 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724702D22612B52400CEA278 /* UIView+Extension.swift */; };
-		724702D82612B5C000CEA278 /* CollectionViewInsieTableCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724702D72612B5C000CEA278 /* CollectionViewInsieTableCellController.swift */; };
 		724702EA2612CF0300CEA278 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724702E92612CF0300CEA278 /* String+Extension.swift */; };
 		724702F82612D5B800CEA278 /* CompanyInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 724702F72612D5B800CEA278 /* CompanyInfoView.xib */; };
 		724702FD2612D5C100CEA278 /* CompanyInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724702FC2612D5C100CEA278 /* CompanyInfoView.swift */; };
@@ -88,7 +87,6 @@
 		722C6017260DD85400B60F75 /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
 		724702CD2612B50100CEA278 /* UITableVIew+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableVIew+Extension.swift"; sourceTree = "<group>"; };
 		724702D22612B52400CEA278 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
-		724702D72612B5C000CEA278 /* CollectionViewInsieTableCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewInsieTableCellController.swift; sourceTree = "<group>"; };
 		724702E92612CF0300CEA278 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		724702F72612D5B800CEA278 /* CompanyInfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompanyInfoView.xib; sourceTree = "<group>"; };
 		724702FC2612D5C100CEA278 /* CompanyInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyInfoView.swift; sourceTree = "<group>"; };
@@ -254,7 +252,6 @@
 			isa = PBXGroup;
 			children = (
 				7276B94E260C6A390011FEB9 /* RootView */,
-				724702D72612B5C000CEA278 /* CollectionViewInsieTableCellController.swift */,
 				7247030E2612EDEA00CEA278 /* DetailView */,
 			);
 			path = ViewControllers;
@@ -586,7 +583,6 @@
 				7247031A2612EE8D00CEA278 /* RootViewController+Protocol.swift in Sources */,
 				7276B958260C6A650011FEB9 /* Enums.swift in Sources */,
 				72B6236A2610BFE100339D24 /* UIImage+Extension.swift in Sources */,
-				724702D82612B5C000CEA278 /* CollectionViewInsieTableCellController.swift in Sources */,
 				724702D32612B52400CEA278 /* UIView+Extension.swift in Sources */,
 				722C600E260DD7EA00B60F75 /* RootViewController+CollectionViewDelegate.swift in Sources */,
 				724702EA2612CF0300CEA278 /* String+Extension.swift in Sources */,

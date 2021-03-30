@@ -26,6 +26,7 @@ class CompanyReviewView: UIView {
     @IBOutlet weak var lbCons: UILabel!
     @IBOutlet weak var lbConsDescription: UILabel!
     
+    @IBOutlet weak var uivSeeMore: UIView!
     @IBOutlet weak var btnSeeMore: UIButton!
     
     private var act : (()->Void)? = nil
@@ -63,27 +64,33 @@ class CompanyReviewView: UIView {
         
         self.lbReviewSummary.numberOfLines = 0
         self.lbReviewSummary.font = .systemFont(ofSize: 22, weight: .bold)
+        self.lbReviewSummary.textColor = Constants.Colors.mainTextColor
         
         self.lbPros.text = "장점".localized // LocalizedString 적용을 할 경우 이렇게 사용
         self.lbPros.font = .systemFont(ofSize: 15, weight: .bold)
-        self.lbPros.textColor = .blue
+        self.lbPros.textColor = Constants.Colors.prosColor
         
         self.lbProsDescription.numberOfLines = 0
         
         self.lbCons.text = "단점".localized
         self.lbCons.font = .systemFont(ofSize: 15, weight: .bold)
-        self.lbCons.textColor = .red
+        self.lbCons.textColor = Constants.Colors.consColor
         
         self.lbConsDescription.numberOfLines = 0
         
-        self.btnSeeMore.tintColor = .gray
+        self.btnSeeMore.tintColor = Constants.Colors.btnSeeMoreColor
         self.btnSeeMore.setTitle("기업리뷰 더보기", for: .normal)
         self.btnSeeMore.titleLabel?.font = .systemFont(ofSize: 16, weight: .bold)
         self.btnSeeMore.addTarget(self, action: #selector(self.seeMoreAct(_:)), for: .touchUpInside)
     }
     
     public func setReviewData(data: searchItem, act: (()->Void)? = nil) {
-        self.act = act
+        if let _act = act {
+            self.act = _act
+            self.uivSeeMore.isHidden = false
+        }else{
+            self.uivSeeMore.isHidden = true
+        }
         self.lbReviewSummary.text = (!data.review_summary.isEmpty ? "\"" + data.review_summary + "\"" : "")
         
         self.lbProsDescription.text = data.pros

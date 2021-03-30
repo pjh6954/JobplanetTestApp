@@ -44,7 +44,7 @@ class CompanyTitleView: UIView {
         guard let views = Bundle.main.loadNibNamed("CompanyTitleView", owner: self, options: nil), let view = views.first as? UIView else {return}
         view.frame = self.bounds
         view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        NSLog("CommunityMainHomeTopView Datas :: \(self.bounds) || \(self.frame)")
+        
         self.addSubview(view)
         
         view.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
@@ -56,19 +56,19 @@ class CompanyTitleView: UIView {
         
         self.lbCompanyName.text = ""
         self.lbCompanyName.font = .systemFont(ofSize: 20, weight: .bold)
-        self.lbCompanyName.textColor = .gray
+        self.lbCompanyName.textColor = Constants.Colors.mainTextColor
         
         self.lbRate.text = ""
         self.lbRate.font = .systemFont(ofSize: 17, weight: .regular)
-        self.lbRate.textColor = .yellow
+        self.lbRate.textColor = Constants.Colors.rateColor
         
         self.lbCompanyIndustry.text = ""
         self.lbCompanyIndustry.font = .systemFont(ofSize: 17, weight: .regular)
-        self.lbCompanyIndustry.textColor = .gray
+        self.lbCompanyIndustry.textColor = Constants.Colors.industryColor
         
         self.uivRateContainer.layer.masksToBounds = false
         self.uivRateContainer.layer.borderWidth = 1
-        self.uivRateContainer.layer.borderColor = UIColor.gray.cgColor
+        self.uivRateContainer.layer.borderColor = Constants.Colors.industryColor.cgColor
         self.uivRateContainer.layer.cornerRadius = self.uivRateContainer.frame.height / 2
     }
     

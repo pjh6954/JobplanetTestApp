@@ -21,10 +21,11 @@ extension rootViewDelegate {
 extension RootViewController: rootViewDelegate {
     func selectNonHorizontal(data: searchItem,  indexNum: Int? = nil) {
         if let type = data.cell_type, type == .horizontal {
-            guard let _index = indexNum else {
+            guard let _ = indexNum else {
                 return
             }
-            
+            //Horizontal일 경우 보여주기 위한 action임.
+            //Horizontal데이터들에 별 데이터가 없어서 일단 구현하지 않았음.
         }else{
             guard let vc = UIStoryboard(name: "DetailViewControllers", bundle: nil).instantiateViewController(withIdentifier: "CompanyDetailViewController") as? CompanyDetailViewController else {
                 return

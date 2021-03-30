@@ -27,10 +27,10 @@ public class APIRequest {
             return
         }
         AF.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil, interceptor: nil, requestModifier: nil).validate().responseJSON { (response) in
-            NSLog("REsponse : \(response)")
+            //NSLog("REsponse : \(response)")
             switch response.result {
             case .success(let value):
-                NSLog("success value : \(value)")
+                //NSLog("success value : \(value)")
                 if let jsonObj = JSON(value).dictionaryObject {
                     guard var mapdata = Mapper<searchResponseModel>().map(JSON: jsonObj) else {
                         completion(nil)

@@ -128,8 +128,6 @@ class ResultTableViewCell: UITableViewCell {
             self.cvHorizontal.dataSource = _cvDataSource
             
             self.cvHorizontal.reloadData()
-            
-            //self.layoutIfNeeded()
             break
         default :
             break
@@ -141,13 +139,4 @@ class ResultTableViewCell: UITableViewCell {
         }
         self._delegate?.selectNonHorizontal(data: _data)
     }
-    /*
-    //MARK: Actions
-    @objc private func seeMoreAct(sender: AnyObject) {
-        guard let _data = self.initData else {
-            return
-        }
-        self._delegate?.selectNonHorizontal(data: _data)
-    }
-    */
 }

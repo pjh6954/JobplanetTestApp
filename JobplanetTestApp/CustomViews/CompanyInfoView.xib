@@ -17,6 +17,7 @@
                 <outlet property="lbSalaryAvg" destination="fdK-Pm-aB5" id="H7Z-39-Knq"/>
                 <outlet property="lbSalaryAvgNum" destination="Efg-XZ-Nfn" id="4F7-sO-Tf5"/>
                 <outlet property="uivBorder" destination="fMH-kZ-Oom" id="yFB-Hj-7Zs"/>
+                <outlet property="uivSeeMore" destination="9Qp-B4-jfN" id="ibI-vX-zOh"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

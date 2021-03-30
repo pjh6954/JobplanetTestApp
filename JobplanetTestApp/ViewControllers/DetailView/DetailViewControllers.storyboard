@@ -84,6 +84,7 @@
                     <connections>
                         <outlet property="imvThumb" destination="leG-tf-XWS" id="OFr-aK-SdC"/>
                         <outlet property="lbName" destination="TKa-Ri-dTy" id="Y7y-Ar-clQ"/>
+                        <outlet property="stvContents" destination="ybV-zA-OXX" id="puk-wv-rlZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zvz-3q-lfA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

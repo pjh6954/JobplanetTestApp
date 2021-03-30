@@ -15,20 +15,18 @@ extension RootViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if self.searchBarController.isActive {
-            if collectionView.tag < 0 || collectionView.tag >= self.searchFilterCompany.count {
+            if collectionView.tag < 0 || collectionView.tag >= self.viewModel.searchFilterCompany.count {
                 return 0
             }
             let indexRow = collectionView.tag
-            return self.searchFilterCompany[indexRow].themes.count
+            return self.viewModel.searchFilterCompany[indexRow].themes.count
         }else{
-            if collectionView.tag < 0 || collectionView.tag >= self.defaultDataResponse.items.count {
+            if collectionView.tag < 0 || collectionView.tag >= self.viewModel.defaultDataResponse.items.count {
                 return 0
             }
             let indexRow = collectionView.tag
-            return self.defaultDataResponse.items[indexRow].themes.count
+            return self.viewModel.defaultDataResponse.items[indexRow].themes.count
         }
-        
-        //return self.horizontalResult.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -37,16 +35,15 @@ extension RootViewController: UICollectionViewDelegate, UICollectionViewDataSour
             return HorizontalCollectionViewCell(frame: .zero)
         }
         if self.searchBarController.isActive {
-            if collectionView.tag >= 0 && collectionView.tag < self.searchFilterCompany.count {
-                cell.setData(data: self.searchFilterCompany[collectionView.tag].themes[indexPath.row])
+            if collectionView.tag >= 0 && collectionView.tag < self.viewModel.searchFilterCompany.count {
+                cell.setData(data: self.viewModel.searchFilterCompany[collectionView.tag].themes[indexPath.row])
             }
         }else{
-            if collectionView.tag >= 0 && collectionView.tag < self.defaultDataResponse.items.count {
-                cell.setData(data: self.defaultDataResponse.items[collectionView.tag].themes[indexPath.row])
+            if collectionView.tag >= 0 && collectionView.tag < self.viewModel.defaultDataResponse.items.count {
+                cell.setData(data: self.viewModel.defaultDataResponse.items[collectionView.tag].themes[indexPath.row])
             }
         }
         
-        //cell.setData(data: self.horizontalResult[indexPath.row])
         return cell
     }
     

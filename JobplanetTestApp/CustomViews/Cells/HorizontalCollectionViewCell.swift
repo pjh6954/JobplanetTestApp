@@ -25,7 +25,6 @@ class HorizontalCollectionViewCell: UICollectionViewCell {
         
     }
     func setData(data : searchTheme) {
-        NSLog("Check Horizontal collectionview data : \(data)")
         if let url = URL(string: data.cover_image), let color = UIColor(hex: data.color) {
             self.imvThumb.kf.setImage(with: url, placeholder: UIImage(color: color), options: nil) { (result, error) in
                 

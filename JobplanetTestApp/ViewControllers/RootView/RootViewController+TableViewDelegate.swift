@@ -13,40 +13,33 @@ extension RootViewController: UITableViewDelegate, UITableViewDataSource {
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        /*
-        if section == 0 {
-            return self.horizontalResult.isEmpty ? 0 : 1
-        }else{
-            return self.nonHorizontalResult.count
-        }
-        */
         if self.searchBarController.isActive {
-            self.cellHeights = .init(repeating: UITableView.automaticDimension, count: self.searchFilterCompany.count)
-            return self.searchFilterCompany.count
+            self.viewModel.cellHeight = .init(repeating: UITableView.automaticDimension, count: self.viewModel.searchFilterCompany.count)
+            return self.viewModel.searchFilterCompany.count
         }else{
-            self.cellHeights = .init(repeating: UITableView.automaticDimension, count: self.defaultDataResponse.items.count)
-            return self.defaultDataResponse.items.count
+            self.viewModel.cellHeight = .init(repeating: UITableView.automaticDimension, count: self.viewModel.defaultDataResponse.items.count)
+            return self.viewModel.defaultDataResponse.items.count
         }
         
     }
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         var data : searchItem
         if self.searchBarController.isActive {
-            if self.searchFilterCompany.count <= indexPath.row {
+            if self.viewModel.searchFilterCompany.count <= indexPath.row {
                 return
             }
-            data = self.searchFilterCompany[indexPath.row]
+            data = self.viewModel.searchFilterCompany[indexPath.row]
         }else{
-            data = self.defaultDataResponse.items[indexPath.row]
+            data = self.viewModel.defaultDataResponse.items[indexPath.row]
         }
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: "ResultTableViewCell", for: indexPath) as? ResultTableViewCell, let type = data.cell_type {
             switch type {
             case .horizontal :
-                self.cellHeights[indexPath.row] = cell.cvHorizontal.collectionViewLayout.collectionViewContentSize.height
+                self.viewModel.cellHeight[indexPath.row] = cell.cvHorizontal.collectionViewLayout.collectionViewContentSize.height
                 break
             default:
-                self.cellHeights[indexPath.row] = cell.frame.height
+                self.viewModel.cellHeight[indexPath.row] = cell.frame.height
                 break
             }
         }
@@ -58,15 +51,15 @@ extension RootViewController: UITableViewDelegate, UITableViewDataSource {
         }
         var selectData : searchItem
         if self.searchBarController.isActive {
-            guard self.searchFilterCompany.count > indexPath.row else {
+            guard self.viewModel.searchFilterCompany.count > indexPath.row else {
                 return ResultTableViewCell()
             }
-            selectData = self.searchFilterCompany[indexPath.row]
+            selectData = self.viewModel.searchFilterCompany[indexPath.row]
         }else{
-            guard self.defaultDataResponse.items.count > indexPath.row else {
+            guard self.viewModel.defaultDataResponse.items.count > indexPath.row else {
                 return ResultTableViewCell()
             }
-            selectData = self.defaultDataResponse.items[indexPath.row]
+            selectData = self.viewModel.defaultDataResponse.items[indexPath.row]
         }
         
         if let type = selectData.cell_type {
@@ -81,6 +74,7 @@ extension RootViewController: UITableViewDelegate, UITableViewDataSource {
                 cell.layoutIfNeeded()
                 let height : CGFloat = cell.cvHorizontal.collectionViewLayout.collectionViewContentSize.height
                 cell.constraintHeightCV.constant = height
+                cell.layoutIfNeeded()
                 break
             }
         }
@@ -89,11 +83,22 @@ extension RootViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        if self.cellHeights.count > indexPath.row {
-            print("HERE TABLE HEIGHT : \(self.cellHeights[indexPath.row])")
-            return self.cellHeights[indexPath.row]
+        var selectData : searchItem
+        if self.searchBarController.isActive {
+            guard self.viewModel.searchFilterCompany.count > indexPath.row else {
+                return .leastNonzeroMagnitude
+            }
+            selectData = self.viewModel.searchFilterCompany[indexPath.row]
         }else{
-            return UITableView.automaticDimension
+            guard self.viewModel.defaultDataResponse.items.count > indexPath.row else {
+                return .leastNonzeroMagnitude
+            }
+            selectData = self.viewModel.defaultDataResponse.items[indexPath.row]
         }
+        guard let type = selectData.cell_type, type == .horizontal else {
+            return .leastNonzeroMagnitude
+        }
+        
+        return 100
     }
 }
