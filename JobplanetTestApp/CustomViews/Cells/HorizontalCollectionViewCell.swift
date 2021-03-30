@@ -15,9 +15,23 @@ class HorizontalCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        self.lbTitle.textColor = .gray
+        self.lbTitle.numberOfLines = 0
+        self.lbTitle.adjustsFontSizeToFitWidth = true
+        self.lbTitle.minimumScaleFactor = 0.5
     }
-    
-    func setData(data : searchItem) {
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+    }
+    func setData(data : searchTheme) {
+        NSLog("Check Horizontal collectionview data : \(data)")
+        if let url = URL(string: data.cover_image), let color = UIColor(hex: data.color) {
+            self.imvThumb.kf.setImage(with: url, placeholder: UIImage(color: color), options: nil) { (result, error) in
+                
+            }
+        }
+        self.lbTitle.text = data.title
         
     }
 }

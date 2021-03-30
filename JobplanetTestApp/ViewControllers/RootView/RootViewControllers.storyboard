@@ -38,7 +38,7 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="UZs-em-G6X"/>
-                        <color key="backgroundColor" systemColor="systemPinkColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="KTU-SL-PUY" firstAttribute="leading" secondItem="UZs-em-G6X" secondAttribute="leading" id="9mI-Oz-O6p"/>
                             <constraint firstItem="UZs-em-G6X" firstAttribute="top" secondItem="KTU-SL-PUY" secondAttribute="top" id="M1n-Us-jan"/>
@@ -59,9 +59,6 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemPinkColor">
-            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

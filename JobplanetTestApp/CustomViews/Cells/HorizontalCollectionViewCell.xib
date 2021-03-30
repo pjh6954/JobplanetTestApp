@@ -70,7 +70,7 @@
                 <outlet property="imvThumb" destination="ZXn-ro-16q" id="fyi-nT-aNe"/>
                 <outlet property="lbTitle" destination="zX3-SU-uqT" id="qB3-xe-Dg0"/>
             </connections>
-            <point key="canvasLocation" x="165.21739130434784" y="158.03571428571428"/>
+            <point key="canvasLocation" x="164.49275362318841" y="157.70089285714286"/>
         </collectionViewCell>
     </objects>
     <resources>

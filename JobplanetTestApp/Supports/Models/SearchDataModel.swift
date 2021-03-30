@@ -50,6 +50,26 @@ public struct searchItem : Mappable {
             self.cell_type = searchResultCellType(rawValue: newValue.uppercased())
         }
     }
+    //company review data
+    var pros: String = "" // 장점
+    var cons: String = "" // 단점
+    var days_ago : Int = 0 // 작성 날짜로 추정
+    var occupation_name: String = ""
+    var date : Date? = nil
+    private var _date: String = "" {
+        willSet {
+            guard !newValue.isEmpty else {
+                self.date = nil
+                return
+            }
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ" // not zulu time : default = locale
+            let result = dateFormatter.date(from: newValue)
+            NSLog("CHeck respons : \(newValue):: \(result)")
+            self.date = result
+        }
+    }
+    //
     var interview_difficulty: Double = 0.0
     var name: String = ""
     var salary_avg: Int = 0
@@ -90,6 +110,12 @@ public struct searchItem : Mappable {
     public mutating func mapping(map: Map) {
         self.ranking                <- map["ranking"]
         self._cell_type             <- map["cell_type"]
+        self.pros                   <- map["pros"]
+        self.cons                   <- map["cons"]
+        self.days_ago               <- map["days_ago"]
+        self.occupation_name        <- map["occupation_name"]
+        self._date                  <- map["date"]
+        
         self.interview_difficulty   <- map["interview_difficulty"]
         self.name                   <- map["name"]
         self.salary_avg             <- map["salary_avg"]
